@@ -2,7 +2,10 @@
 
 Url API.
 
-1. Registration user:
+
+
+ - Registration user:
+
 
 /api/registration/ method POST
 
@@ -24,10 +27,12 @@ Json responce (example):
 
 
 
-2. Get user profile:
 
 
-/api/profile/?key=<API_KEY> metod GET.
+ - Get user profile:
+
+
+/api/profile/?key=API_KEY metod GET.
 
 
 Json responce (example):
@@ -36,7 +41,9 @@ Json responce (example):
 {"email": "test@example.com", "username": "test", "posts_count": 0}
 
 
-3. Create post:
+
+
+ - Create post:
 
 
 /api/post/ method POST
@@ -51,3 +58,42 @@ json data (example):
 	"body": "tes this is a good"
 }
 
+
+
+
+ - Get user posts.
+
+
+/api/post/?key=AIP_KEY method GET
+
+
+[{"body": "POST_BODY1", "title": "POST_TITLE1"}, {"body": "POST_BODY2", "title": "POST_TITLE2"}]
+
+
+
+
+
+ - Get user posts with paginator (keyword - page):
+
+
+/api/post/?key=AIP_KEY&page_number  method GET
+
+
+
+
+ - Get all posts (keyword - all , without parameters):
+
+
+/api/post/?key=AIP_KEY&all  method GET
+
+
+
+
+ - Search posts (keyword title and body). All arguments must be separated "+":
+
+
+/api/post/?key=AIP_KEY&all&title=w1+w2&body=w1+w3
+
+
+Json response (exemple):
+[{"body": "w1 w3 anything", "title": "something w1 w2 something"}]
